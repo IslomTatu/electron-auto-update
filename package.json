@@ -1,11 +1,11 @@
 {
   "name": "electron-auto-update-example",
-  "version": "2.0.5",
+  "version": "3.0.0",
   "description": "",
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IslomTatu/electron-auto-update/"
+    "url": "https://github.com/IslomTatu/electron-auto-update.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
