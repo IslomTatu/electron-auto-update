@@ -12,11 +12,14 @@ function createWindow () {
     },
   });
   mainWindow.loadFile('index.html');
+  mainWindow.webContents.openDevTools();
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
   mainWindow.once('ready-to-show', () => {
-    autoUpdater.checkForUpdatesAndNotify();
+    setTimeout(() => {
+      autoUpdater.checkForUpdatesAndNotify();
+    }, 30000);
   });
 }
 
@@ -41,10 +44,12 @@ ipcMain.on('app_version', (event) => {
 });
 
 autoUpdater.on('update-available', () => {
+  console.log("update-available")
   mainWindow.webContents.send('update_available');
 });
 
 autoUpdater.on('update-downloaded', () => {
+  console.log("update-downloaded")
   mainWindow.webContents.send('update_downloaded');
 });
 
